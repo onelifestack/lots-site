@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Lots">
+  <rect width="512" height="512" rx="112" fill="#FFC94D"/>
+  <g transform="translate(256 250)">
+    <rect x="-118" y="-170" width="116" height="170" rx="18" fill="#9DD3FF" transform="rotate(-14 -60 0)"/>
+    <rect x="2" y="-170" width="116" height="170" rx="18" fill="#FF8E72" transform="rotate(14 60 0)"/>
+    <rect x="-58" y="-196" width="116" height="190" rx="18" fill="#FFFFFF"/>
+    <rect x="-36" y="-170" width="72" height="12" rx="6" fill="#26173D" opacity=".85"/>
+    <rect x="-36" y="-140" width="48" height="10" rx="5" fill="#26173D" opacity=".35"/>
+  </g>
+  <rect x="96" y="262" width="320" height="150" rx="34" fill="#5B2EE0"/>
+  <rect x="206" y="300" width="100" height="22" rx="11" fill="#FFC94D"/>
+</svg>
