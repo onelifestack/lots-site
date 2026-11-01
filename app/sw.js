@@ -1,6 +1,9 @@
 // Lots web: keeps the app's own files so it opens offline. It never touches anything outside /app/.
-const CACHE = 'lots-app-v1'
-self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/app/', '/app/manifest.webmanifest', '/app/icon-192.png'])).then(() => self.skipWaiting())) })
+// The build step stamps the build hash into the cache name below so every release has a different worker file; that is how an open page learns an update is waiting.
+const CACHE = 'lots-app-8d0a8076f7'
+self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/app/', '/app/manifest.webmanifest', '/app/icon-192.png']))) })
+// A new version waits until the page says so (the "Reload" button), so nothing changes under an open session.
+self.addEventListener('message', (e) => { if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting() })
 self.addEventListener('activate', (e) => {
   e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()))
 })
